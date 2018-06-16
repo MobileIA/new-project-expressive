@@ -29,6 +29,14 @@ return [
     ]
 ];
 ```
+5. Iniciar base de datos desde "index.php":
+```php
+/** @var \Psr\Container\ContainerInterface $container */
+$container = require 'config/container.php';
+
+// Inicializar Database
+Mobileia\Expressive\Database\Eloquent::install($container);
+```
 
 ## Activar modo desarrollador
 ```bash
