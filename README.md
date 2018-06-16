@@ -37,6 +37,13 @@ $container = require 'config/container.php';
 // Inicializar Database
 Mobileia\Expressive\Database\Eloquent::install($container);
 ```
+6. Activar para recibir JSON, abrir archivo "config/pipeline.php":
+```php
+use Zend\Expressive\Helper\BodyParams\BodyParamsMiddleware;
+//...
+//$app->pipe(ServerUrlMiddleware::class);
+$app->pipe(BodyParamsMiddleware::class);
+```
 
 ## Activar modo desarrollador
 ```bash
