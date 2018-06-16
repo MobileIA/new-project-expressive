@@ -44,6 +44,7 @@ use Zend\Expressive\Helper\BodyParams\BodyParamsMiddleware;
 //$app->pipe(ServerUrlMiddleware::class);
 $app->pipe(BodyParamsMiddleware::class);
 ```
+7. Incluir libreria de Autenticación: https://github.com/MobileIA/mia-authentication-expressive
 
 ## Activar modo desarrollador
 ```bash
