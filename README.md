@@ -44,7 +44,50 @@ use Zend\Expressive\Helper\BodyParams\BodyParamsMiddleware;
 //$app->pipe(ServerUrlMiddleware::class);
 $app->pipe(BodyParamsMiddleware::class);
 ```
-7. Incluir libreria de Autenticación: https://github.com/MobileIA/mia-authentication-expressive
+7. Crear primer modelo:
+```php
+namespace App\Model;
+
+/**
+ * Description of Ranking
+ *
+ * @author matiascamiletti
+ */
+class Ranking extends \Illuminate\Database\Eloquent\Model
+{
+    protected $table = 'ranking';
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    //public $timestamps = false;
+}
+```
+8. Incluir libreria de Autenticación: https://github.com/MobileIA/mia-authentication-expressive
+9. Generar Primer servicio:
+- Crear Archivo: src/App/src/Handler/FetchHandler y extendemos de: \Mobileia\Expressive\Auth\Request\MiaAuthRequestHandler
+```php
+class FetchHandler extends \Mobileia\Expressive\Request\MiaRequestHandler
+{
+    /**
+     * Servicio para obtener los datos
+     * @param \Psr\Http\Message\ServerRequestInterface $request
+     * @return \Psr\Http\Message\ResponseInterface
+     */
+    public function handle(\Psr\Http\Message\ServerRequestInterface $request): \Psr\Http\Message\ResponseInterface 
+    {
+        // Obtener usuario
+        $user = $this->getUser($request);
+        // Obtener parametro de Actualización
+        $updatedAt = $this->getParam($request, 'updated_at', null);
+        // Obtenemos registros
+        $activities = \App\Repository\ActivityRepository::fetchAll($user->id, $updatedAt);
+        // Devolvemos respuesta
+        return new \Mobileia\Expressive\Diactoros\MiaJsonResponse($activities->toArray());
+    }
+}
+```
 
 ## Activar modo desarrollador
 ```bash
