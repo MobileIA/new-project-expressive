@@ -88,6 +88,18 @@ class FetchHandler extends \Mobileia\Expressive\Request\MiaRequestHandler
     }
 }
 ```
+10. Incluir ruta en: /config/routes.php:
+```php
+    /**
+     * Servicio para enviar la puntuación del jugador
+     */
+    $app->route('/ranking/send', [
+        // Validar los parametros requeridos
+        new Mobileia\Expressive\Request\MiaVerifyParamHandler(array('name', 'game_id', 'points')),
+        // Verificar que sea un usuario logueado
+        \Mobileia\Expressive\Auth\Handler\AuthHandler::class,
+        App\Handler\SendRankingHandler::class], ['GET', 'POST'], 'ranking.send');
+```
 
 ## Activar modo desarrollador
 ```bash
