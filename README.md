@@ -120,7 +120,22 @@ composer check
 ```
 
 ## Producción
-1. Limpiar cache
+Como publicar en el servidor.
+1. Clonar repositorio:
+```bash
+git clone https://matiascamiletti@bitbucket.org/matiascamiletti/juegos-api.git
+```
+2. Instalar dependencias: 
+```bash
+sudo composer install --no-dev
+sudo composer update --no-dev
+```
+3. Dar permisos a la carpeta de cache:
+```bash
+sudo chmod -R 777 data/cache/
+```
+
+- Limpiar cache
 ```bash
 composer clear-config-cache
 ```
