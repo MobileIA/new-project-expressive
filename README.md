@@ -100,6 +100,23 @@ class FetchHandler extends \Mobileia\Expressive\Request\MiaRequestHandler
         \Mobileia\Expressive\Auth\Handler\AuthHandler::class,
         App\Handler\SendRankingHandler::class], ['GET', 'POST'], 'ranking.send');
 ```
+11. Activar CORS:
+```bash
+composer require tuupola/cors-middleware
+```
+```php
+use Tuupola\Middleware\CorsMiddleware;
+
+//$app->pipe(CorsMiddleware::class);
+$app->pipe(new Tuupola\Middleware\CorsMiddleware([
+    "origin" => ["*"],
+    "methods" => ["GET", "POST", "PUT", "PATCH", "DELETE"],
+    "headers.allow" => ["Authorization", "If-Match", "If-Unmodified-Since", "Content-Type", "Accept", "Origin", "X-Auth-Token", "X-Requested-With", "Access-Control-Allow-Headers", "Access-Control-Allow-Origin"],
+    "headers.expose" => ["Etag"],
+    "credentials" => false,
+    "cache" => 0,
+]));
+```
 
 ## Activar modo desarrollador
 ```bash
