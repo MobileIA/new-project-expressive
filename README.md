@@ -10,6 +10,34 @@ composer create-project zendframework/zend-expressive-skeleton name_of_project
 - Fast Route
 - None template
 - Whoops
+3. Agregar repositorios en el composer.json:
+```js
+"repositories": [{
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-eloquent-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-core-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/authentication.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-authentication-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-firebase-zf3.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-firebase-expressive.git"
+        }
+    ]
+```
 3. Configuración de la base de datos:
 ```bash
 composer require illuminate/database
