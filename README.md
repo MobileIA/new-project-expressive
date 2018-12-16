@@ -185,6 +185,31 @@ sudo chmod -R 777 data/cache/
 composer clear-config-cache
 ```
 
+- Configurar Apache, Crear archivo host.domain.com.conf en "/etc/apache2/sites-available"
+```txt
+<VirtualHost *:80>
+    ServerAdmin matiascamiletti@mobileia.com
+    ServerName api.iagram.mobileia.com
+    ServerAlias www.api.iagram.mobileia.com
+    DocumentRoot /var/www/ia-gram-api/public
+    ErrorLog ${APACHE_LOG_DIR}/ia-gram-api.error.log
+    CustomLog ${APACHE_LOG_DIR}/ia-gram-api.access.log combined
+    AccessFileName .htaccess
+       RewriteEngine on
+       <Directory /var/www/ia-gram-api/public >
+              AllowOverride All
+       </Directory>
+</VirtualHost>
+```
+Activar virtualHost creado:
+```bash
+sudo a2ensite api.iagram.mobileia.com.conf
+```
+Reiniciar Apache:
+```bash
+sudo service apache2 restart
+```
+
 
 
 ## Creación de Modulo/Libreria para implementar con Composer
