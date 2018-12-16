@@ -245,3 +245,17 @@ sudo service apache2 restart
 ```
 4. Comitiar y pushear cambios.
 5. Crear release.
+
+## Como utilizar Cronjob en Linux
+1. Abrir archivo:
+```bash
+sudo crontab -e
+```
+2. Agregar linea de Cron:
+```
+# Se va a ejecutar todos los dias a las 10:00
+0 10 * * * wget http://api.iagram.mobileia.com/instagram/test-1 >/dev/null 2>&1
+# Se ejecuta cada 5 minutos
+*/5 * * * * wget http://api.iagram.mobileia.com/instagram/test-2 >/dev/null 2>&1 
+
+```
