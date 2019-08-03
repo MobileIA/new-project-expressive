@@ -35,6 +35,10 @@ composer create-project zendframework/zend-expressive-skeleton name_of_project
         {
             "type": "git",
             "url": "https://github.com/MobileIA/mia-firebase-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-mail-expressive.git"
         }
     ]
 ```
