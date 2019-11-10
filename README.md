@@ -150,6 +150,18 @@ $app->pipe(new Tuupola\Middleware\CorsMiddleware([
 ]));
 ```
 
+## Activar StackDriver en App Engine
+1. Agregar en el archivo config/autoload/zend-expressive.global.php
+```php
+'dependencies' => [
+    'invokables' => [
+    ],
+    'factories'  => [
+        ErrorResponseGenerator::class       => \Mobileia\Expressive\Middleware\StackDriverErrorMiddleware::class
+    ],
+],
+```
+
 ## Activar modo desarrollador
 ```bash
 $ composer development-enable  # enable development mode
