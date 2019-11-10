@@ -157,9 +157,15 @@ $app->pipe(new Tuupola\Middleware\CorsMiddleware([
     'invokables' => [
     ],
     'factories'  => [
-        ErrorResponseGenerator::class       => \Mobileia\Expressive\Middleware\StackDriverErrorMiddleware::class
+        \Zend\Expressive\Middleware\ErrorResponseGenerator::class       => \Mobileia\Expressive\Middleware\StackDriverErrorMiddleware::class
     ],
 ],
+```
+2. Agregar librerias:
+```js
+"google/cloud-error-reporting": "^0.15.0",
+"google/cloud-logging": "^1.18",
+"google/cloud-storage": "^1.14",
 ```
 
 ## Activar modo desarrollador
