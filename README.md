@@ -39,6 +39,26 @@ composer create-project zendframework/zend-expressive-skeleton name_of_project
         {
             "type": "git",
             "url": "https://github.com/MobileIA/mia-mail-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-newsletter-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-slider-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-metatags-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-job-expressive.git"
+        },
+        {
+            "type": "git",
+            "url": "https://github.com/MobileIA/mia-installer-expressive.git"
         }
     ]
 ```
