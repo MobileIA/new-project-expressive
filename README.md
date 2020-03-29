@@ -158,10 +158,8 @@ class FetchHandler extends \Mobileia\Expressive\Request\MiaRequestHandler
 composer require tuupola/cors-middleware
 ```
 ```php
-use Tuupola\Middleware\CorsMiddleware;
-
 //$app->pipe(CorsMiddleware::class);
-$app->pipe(new Tuupola\Middleware\CorsMiddleware([
+$app->pipe(new \Tuupola\Middleware\CorsMiddleware([
     "origin" => ["*"],
     "methods" => ["GET", "POST", "PUT", "PATCH", "DELETE"],
     "headers.allow" => ["Authorization", "If-Match", "If-Unmodified-Since", "Content-Type", "Accept", "Origin", "X-Auth-Token", "X-Requested-With", "Access-Control-Allow-Headers", "Access-Control-Allow-Origin"],
@@ -184,9 +182,9 @@ $app->pipe(new Tuupola\Middleware\CorsMiddleware([
 ```
 2. Agregar librerias:
 ```js
-"google/cloud-error-reporting": "^0.15.0",
-"google/cloud-logging": "^1.18",
-"google/cloud-storage": "^1.14",
+"google/cloud-error-reporting": "^0.16.0",
+        "google/cloud-logging": "^1.19",
+        "google/cloud-storage": "^1.18"
 ```
 
 ## Activar modo desarrollador
