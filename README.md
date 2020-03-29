@@ -65,6 +65,7 @@ composer create-project zendframework/zend-expressive-skeleton name_of_project
 3. Configuración de la base de datos:
 ```bash
 composer require illuminate/database
+composer require mobileia/mia-core-expressive
 composer require mobileia/mia-eloquent-expressive
 ```
 4. Crear archivo "eloquent.global.php" en "config/autoload":
