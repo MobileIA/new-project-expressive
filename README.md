@@ -300,3 +300,13 @@ sudo crontab -e
 */5 * * * * wget http://api.iagram.mobileia.com/instagram/test-2 >/dev/null 2>&1 
 
 ```
+
+## Como Utilizar Google Tasks
+1. Creamos el Queue:
+```bash
+gcloud tasks queues create [QUEUE_ID]
+```
+2. Ejecutar siguiente comando para obtener la Location:
+```bash
+gcloud tasks queues describe [QUEUE_ID]
+```
