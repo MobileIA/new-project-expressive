@@ -68,6 +68,21 @@ composer require illuminate/database
 composer require mobileia/mia-core-expressive
 composer require mobileia/mia-eloquent-expressive
 ```
+3. B) En vez del punto anterior copiar directamente esto en el composer, dentro de "require":
+```json
+"illuminate/database": "^6.15",
+"mobileia/auth": "dev-master",
+"mobileia/mia-authentication-expressive": "dev-master",
+"mobileia/mia-core-expressive": "dev-master",
+"mobileia/mia-eloquent-expressive": "dev-master",
+"mobileia/mia-installer-expressive": "dev-master",
+"mobileia/mia-mail-expressive": "dev-master",
+"tuupola/cors-middleware": "^1.1",
+```
+Y ejecutar:
+```bash
+composer update
+```
 4. Crear archivo "eloquent.global.php" en "config/autoload":
 ```php
 return [
